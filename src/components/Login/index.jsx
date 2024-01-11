@@ -41,11 +41,11 @@ function Login() {
                   value={name}
                   placeholder="아이디"
                 ></S.Input>
-                <label htmlFor="username">아이디</label>
+                <S.Label htmlFor="username">아이디</S.Label>
               </S.InputBox>
               <S.InputBox>
                 <S.Input type="password" placeholder="비밀번호"></S.Input>
-                <label htmlFor="password">비밀번호</label>
+                <S.Label htmlFor="password">비밀번호</S.Label>
               </S.InputBox>
               <S.Submit onClick={handleLogin}>로그인</S.Submit>
             </>
