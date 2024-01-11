@@ -14,6 +14,7 @@ function Home() {
             movePage('/blog/'+pullLogin());
         } else {
             alert('로그인 해주세요');
+            movePage('/login');
         }
     }
     
@@ -25,7 +26,6 @@ function Home() {
                 {pullBlog() ? pullBlog().map((value, idx) => {
                     return <Blog key={idx} idx={idx} title={value.title} user={value.user}/>
                 }) : ''}
-                
             </S.Contents>
             <S.C_Btn onClick={handleDetail}>글쓰기</S.C_Btn>
         </S.Main>
