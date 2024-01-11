@@ -8,14 +8,11 @@ export const Main = styled.section`
 `;
 
 export const Contents = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 25px;
-  width: 1000px;
+  width: 300px;
   margin: 0 auto;
   height: 100%;
   padding-top: 100px;
+  text-align: center;
 `;
 
 export const Title = styled.h2`
@@ -27,37 +24,33 @@ export const InputBox = styled.div`
   width: 300px;
   position: relative;
   margin: 10px 0;
-  & > input {
+  user-select: none;
+  > input {
     background: transparent;
     width: 100%;
     padding: 20px 0 5px 0;
     border: none;
     border-bottom: 1px solid #aaa;
-    font-size: 14pt;
+    font-size: 15pt;
   }
 `;
 
 export const Input = styled.input`
   border: none;
   outline: none;
-  border-radius: 3px;
-  padding: 0 10px;
   &::placeholder {
     color: transparent;
   }
   &:placeholder-shown + label {
     color: #aaa;
-    font-size: 14pt;
-    position: absolute;
-    top: 15px;
-    left: 0;
+    font-size: 12pt;
+    top: 19px;
     transition: all 0.2s ease;
-    pointer-events: none;
   }
   &:focus + label,
   label {
     color: #333;
-    font-size: 10pt;
+    font-size: 9pt;
     position: absolute;
     top: 0;
     left: 0;
@@ -68,8 +61,18 @@ export const Input = styled.input`
   }
 `;
 
+export const Label = styled.label`
+  color: #333;
+  font-size: 9pt;
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+`
+
 export const Submit = styled.button`
-  padding: 6px 15px;
+  padding: 6px 18px;
+  margin-top: 10px;
   border: none;
   outline: none;
   border-radius: 3px;
@@ -78,6 +81,6 @@ export const Submit = styled.button`
   transition: 0.2s;
   color: #fff;
   &:hover {
-    background: #42759d;
+    background: #396281;
   }
 `;
