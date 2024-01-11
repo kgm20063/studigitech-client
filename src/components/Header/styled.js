@@ -24,10 +24,9 @@ export const LogoBox = styled.div`
   align-items: center;
   width: 200px;
   height: 100%;
-
   > img {
-    width: 70%;
-    height: 70%;
+    width: 80%;
+    // height: 80%;
   }
 `;
 
@@ -35,9 +34,18 @@ export const LoginBox = styled.div`
   width: 40px;
   height: 40px;
   border-radius: 100%;
-  background: #fff;
+  > img {
+    width: 100%;
+  }
 `;
 
 export const UserBox = styled.p`
+  display: flex;
   color: #fff;
+  font-size: 15pt;
+  border-radius: 100%;
+  > img {
+    width: 25px;
+    margin-right: 10px;
+  }
 `;
