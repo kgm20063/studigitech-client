@@ -1,51 +1,61 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import * as S from './styled';
+import * as S from "./styled";
 import Header from "../Header";
 
-import { Logout, pullLogin, pushLogin } from '../../utils/login';
+import { Logout, pullLogin, pushLogin } from "../../utils/login";
 
 function Login() {
-    const movePage = useNavigate();
-    const [name, setName] = useState('');
+  const movePage = useNavigate();
+  const [name, setName] = useState("");
 
-    const handleChange = (e) => {
-        setName(e.target.value);
-    };
+  const handleChange = (e) => {
+    setName(e.target.value);
+  };
 
-    const handleLogin = () => {
-        if (name) {
-            pushLogin(name);
-            movePage('/');
-        } else {
-            alert('정보를 작성해주세요!');
-        }
+  const handleLogin = () => {
+    if (name) {
+      pushLogin(name);
+      movePage("/");
+    } else {
+      alert("정보를 작성해주세요!");
     }
+  };
 
-    const handleLogout = () => {
-        Logout();
-        window.location.reload();
-    }
+  const handleLogout = () => {
+    Logout();
+    window.location.reload();
+  };
 
-    return (
-        <>
-        <Header />
-        <S.Main>
-            <S.Contents>
-                {
-                !pullLogin() ? 
-                <>
-                <S.Title>로그인</S.Title>
-                <S.NameInp onChange={handleChange} value={name}></S.NameInp>
-                <S.PWInp type='password'></S.PWInp>
-                <S.Submit onClick={handleLogin}>로그인</S.Submit>
-                </> : <S.Submit onClick={handleLogout}>로그아웃</S.Submit>
-                }
-                
-            </S.Contents>
-        </S.Main>
-        </>
-    );
+  return (
+    <>
+      <Header />
+      <S.Main>
+        <S.Contents>
+          {!pullLogin() ? (
+            <>
+              <S.Title>로그인</S.Title>
+              <S.InputBox>
+                <S.Input
+                  onChange={handleChange}
+                  value={name}
+                  placeholder="아이디"
+                ></S.Input>
+                <label htmlFor="username">아이디</label>
+              </S.InputBox>
+              <S.InputBox>
+                <S.Input type="password" placeholder="비밀번호"></S.Input>
+                <label htmlFor="password">비밀번호</label>
+              </S.InputBox>
+              <S.Submit onClick={handleLogin}>로그인</S.Submit>
+            </>
+          ) : (
+            <S.Submit onClick={handleLogout}>로그아웃</S.Submit>
+          )}
+        </S.Contents>
+      </S.Main>
+    </>
+  );
 }
 
 export default Login;
