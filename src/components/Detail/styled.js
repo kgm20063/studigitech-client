@@ -4,7 +4,7 @@ export const Main = styled.section`
     width : 100%;
     height : calc(100vh - 80px);
     position: relative;
-    background : #D6DBDF;
+    background : #f1f1f1;
 `;
 
 export const Contents = styled.div`
